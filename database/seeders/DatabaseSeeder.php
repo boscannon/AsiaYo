@@ -17,13 +17,23 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        for($x=0; $x < 20; $x++){
         Property::factory()
-            ->count(10)
+            ->count(1)
             ->has(
                 Room::factory()
-                    ->count(10)
-                    ->has(Orders::factory()->count(100))
+                    ->count(5)
+                    ->has(Orders::factory()->times(random_int(100, 999)))
             )
             ->create();
+        }
+
+        // SELECT count(*) as orderCount, property.name from property
+        // LEFT JOIN room on property.id = room.property_id
+        // LEFT JOIN orders on room.id = orders.room_id
+        // GROUP BY property.id
+        // ORDER BY orderCount desc
+        // LIMIT 10
     }
 }

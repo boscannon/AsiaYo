@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('room_id');
             $table->decimal('price', $precision = 8);
             $table->timestamp('created_at')->nullable();
+            $table->index(['room_id']);
         });
     }
 

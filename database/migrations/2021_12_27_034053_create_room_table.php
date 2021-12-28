@@ -17,6 +17,7 @@ class CreateRoomTable extends Migration
             $table->id();
             $table->unsignedBigInteger('property_id');
             $table->string('name',50);
+            $table->index(['property_id']);
         });
     }
 
