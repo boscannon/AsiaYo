@@ -13,7 +13,7 @@ cd asiayo
 
 composer install
 
-cp .env .env.example
+cp .env.example  .env
 
 php artisan key:generate
 # 測試資料
