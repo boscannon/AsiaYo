@@ -15,4 +15,4 @@ use App\Http\Controllers\ExchangeController;
 */
 
 
-Route::post('/exchange',[TagManageController::class, 'index'])->name('exchange');
+Route::post('/exchange',[ExchangeController::class, 'index'])->name('exchange');

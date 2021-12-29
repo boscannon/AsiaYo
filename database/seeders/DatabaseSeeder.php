@@ -19,14 +19,14 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         for($x=0; $x < 20; $x++){
-        Property::factory()
-            ->count(1)
-            ->has(
-                Room::factory()
-                    ->count(5)
-                    ->has(Orders::factory()->times(random_int(100, 999)))
-            )
-            ->create();
+            Property::factory()
+                ->count(1)
+                ->has(
+                    Room::factory()
+                        ->count(10)
+                        ->has(Orders::factory()->times(random_int(1000, 9999)))
+                )
+                ->create();
         }
 
         // SELECT count(*) as orderCount, property.name from property

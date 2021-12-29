@@ -15,7 +15,7 @@ class OrdersFactory extends Factory
     {
         return [
             'price' => $this->faker->numberBetween(1000, 10000),
-            'created_at' => now(),
+            'created_at' => '2021-02-22 09:34:'.random_int(11, 59),
         ];
     }
 }
